@@ -88,7 +88,7 @@
             {/each}
           </g>
         {/each}
-        {#if activeRanker}
+        {#if activeRanker !== null}
           <!-- tooltip -->
           <g transform="translate({activeRanker * 350 + 100}, {activeCandidatePos * candidateHeight - 10})">
             <rect x={-25} y={0} height="20" width="50" fill="white" stroke="#000" />
