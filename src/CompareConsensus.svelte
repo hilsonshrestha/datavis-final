@@ -2,13 +2,11 @@
   import { hsl } from 'd3'
   const margin = { top: 80, bottom: 10, left: 30, right: 30 }
 
-  import baseRankings from '../data/baseRankings.json';
-  import consensusRankings from '../data/consensusRankings.json';
+  import baseRankings from '../data/baseRankings.json'
+  import consensusRankings from '../data/consensusRankings.json'
 
   let width
   let height
-
-  const allRankings = [...baseRankings, ...consensusRankings]
 
   let hoverRanker = null
 
@@ -18,7 +16,7 @@
 
   const diffConsensus = consensusRankings.map((consensusRanking, i) => {
     return consensusRanking.map((p, j) => {
-      return baseRankings.map((b) => j - b.indexOf(p))
+      return baseRankings.map((b) => b.indexOf(p) - j)
     })
   })
 
@@ -93,15 +91,16 @@
         {#if activeRanker}
           <!-- tooltip -->
           <g transform="translate({activeRanker * 350 + 100}, {activeCandidatePos * candidateHeight - 10})">
-            <rect x={-25} y={0} height="20" width="50" fill="white" stroke="#000"/>
-            <text x={0} y={0} font-size="12px" dy="1.2em" text-anchor="middle" font-weight="bold">{consensusRankings[activeRanker][activeCandidatePos]}</text>
+            <rect x={-25} y={0} height="20" width="50" fill="white" stroke="#000" />
+            <text x={0} y={0} font-size="12px" dy="1.2em" text-anchor="middle" font-weight="bold"
+              >{consensusRankings[activeRanker][activeCandidatePos]}</text
+            >
           </g>
         {/if}
       </g>
     </svg>
   </div>
 </div>
-{(console.log(consensusRankings), '')}
 
 <style>
   .container {

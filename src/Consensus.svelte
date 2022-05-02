@@ -70,7 +70,6 @@
     .map((ranking, i) => {
       return baseRankings.map((baseRanking, j) => i - baseRanking.indexOf(ranking))
     })
-  console.log(allDiffs)
 
   const diffLines = tweened(
     allDiffs.map((diffs, consensusPosition) =>
@@ -113,7 +112,6 @@
       }),
     )
   } else if (step === 1) {
-
     l1Opacity.set(1)
     highlightLines.set(
       candidateDiff.map((diff, i) => {
@@ -149,7 +147,6 @@
       // })),
     )
   } else if (step === 3) {
-    console.log(step)
     l1Opacity.set(1 / totalBaseRankings)
     highlightLines.set(
       candidateDiff.map((diff, i) => {
@@ -163,22 +160,7 @@
         }
       }),
     )
-    // diffLines.set(
-    //   allDiffs.map((diffs, consensusPosition) =>
-    //     diffs.map((diff, i) => {
-    //       let a = (consensusPosition - diff) * candidateHeight
-    //       let b = consensusPosition * candidateHeight
-    //       return {
-    //         x1: i * rankerWidth + 20 + 2 * consensusPosition,
-    //         y1: a > b ? a : b,
-    //         x2: i * rankerWidth + 20 + 2 * consensusPosition,
-    //         y2: a > b ? b : a,
-    //       }
-    //     }),
-    //   ),
-    // )
   } else if (step === 4) {
-    console.log(step)
     l1Opacity.set(1 / totalBaseRankings)
 
     diffLines.set(
@@ -195,21 +177,6 @@
         }),
       ),
     )
-
-    // diffLines.set(
-    //   allDiffs.map((diffs, consensusPosition) =>
-    //     diffs.map((diff, i) => {
-    //       const a = (consensusPosition - diff) * candidateHeight
-    //       const b = consensusPosition * candidateHeight
-    //       return {
-    //         x1: totalBaseRankings * rankerWidth + 20 + 2 * consensusPosition,
-    //         y1: a > b ? a : b,
-    //         x2: totalBaseRankings * rankerWidth + 20 + 2 * consensusPosition,
-    //         y2: a > b ? b : a,
-    //       }
-    //     }),
-    //   ),
-    // )
   } else if (step === 5) {
     // l1Opacity.set(1 / totalBaseRankings)
     diffLines.set(
@@ -226,33 +193,12 @@
         }),
       ),
     )
-
-    // diffLines.set(
-    //   allDiffs.map((diffs, consensusPosition) =>
-    //     diffs.map((diff, i) => {
-    //       const a = totalBaseRankings * rankerWidth + rankerWidth / 2
-    //       const b = totalBaseRankings * rankerWidth + rankerWidth / 2 - diff * 5
-
-    //       // const a = (consensusPosition - diff) * candidateHeight
-    //       // const b = consensusPosition * candidateHeight
-    //       return {
-    //         x1: a > b ? a : b,
-    //         y1: consensusPosition * candidateHeight,
-    //         x2: a > b ? b : a,
-    //         y2: consensusPosition * candidateHeight,
-    //       }
-    //     }),
-    //   ),
-    // )
   } else if (step === 6) {
     diffLines.set(
       allDiffs.map((diffs, consensusPosition) =>
         diffs.map((diff, i) => {
           const a = totalBaseRankings * rankerWidth + rankerWidth / 2
           const b = totalBaseRankings * rankerWidth + rankerWidth / 2 - diff * 5
-
-          // const a = (consensusPosition - diff) * candidateHeight
-          // const b = consensusPosition * candidateHeight
           return {
             x1: a > b ? a : b,
             y1: consensusPosition * candidateHeight,
@@ -280,13 +226,7 @@
             <g transform="translate(0, {j * candidateHeight})">
               <text class="candidate-name {candidate === initialCandidate ? 'selected' : ''}" dy="5px">{candidate}</text
               >
-              <rect
-                x={-candidateHeight / 2}
-                y="0"
-                width="50"
-                height={candidateHeight}
-                fill="transparent"
-              />
+              <rect x={-candidateHeight / 2} y="0" width="50" height={candidateHeight} fill="transparent" />
             </g>
           {/each}
         </g>
