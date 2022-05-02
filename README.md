@@ -1,4 +1,4 @@
-Final Project - Interactive Data Visualization  
+Consensus Visualization  
 ===
 
 The key learning experience of this course is the final project. 
