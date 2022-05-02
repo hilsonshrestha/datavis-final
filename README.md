@@ -13,7 +13,7 @@ Visualize the level of agreement or disagrement on consensus rankings by each st
 Data used in the project are 
 1. 60 candidates data generated from http://roycekimmons.com/tools/generated_data/exams
 2. 500 candidates data generated from https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
-3. Consensus rankings genereted using FairCopeland Algorithm [Cachel et. al - ManiRank]
+3. Consensus rankings generated using FairCopeland Algorithm [Cachel et. al - ManiRank]
 
 # Libraries and Frameworks
 - Svelte Compiler
