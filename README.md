@@ -5,6 +5,8 @@ Visualizing Consensus
 
 **Video**: https://youtu.be/z5D1gk7UiBQ
 
+**Process Book**: https://github.com/hilsonshrestha/datavis-final/blob/main/Process%20Book.pdf
+
 
 # Goal
 Visualize the level of agreement or disagrement on consensus rankings by each stakeholders.
